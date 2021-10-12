@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
+import Seo from "../components/Seo";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -12,12 +13,15 @@ const IndexPage = () => {
     }
   `);
 
-  const meta = data?.site?.siteMetadata?.title;
+  const meta = data?.site?.siteMetadata ?? {};
   console.log(meta);
   return (
-    <main>
-      <h1>Hello</h1>
-    </main>
+    <>
+      <Seo />
+      <main>
+        <h1>Hello</h1>
+      </main>
+    </>
   );
 };
 
