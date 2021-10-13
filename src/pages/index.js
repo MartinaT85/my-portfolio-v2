@@ -14,7 +14,6 @@ const IndexPage = () => {
   `);
 
   const meta = data?.site?.siteMetadata ?? {};
-  console.log(meta);
   return (
     <>
       <Seo />
